@@ -286,7 +286,7 @@ class ThingsBoardSized {
 #if THINGSBOARD_ENABLE_STREAM_UTILS
         // Check if the size of the given message would be too big for the actual client,
         // if it is utilize the serialize json work around, so that the internal client buffer can be circumvented
-        if (m_client.get_buffer_size() < json_size)  {
+        if (m_client.get_send_buffer_size() < json_size)  {
 #if THINGSBOARD_ENABLE_DEBUG
             Logger::printfln(SEND_MESSAGE, topic, SEND_SERIALIZED);
 #endif // THINGSBOARD_ENABLE_DEBUG
